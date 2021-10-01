@@ -1,0 +1,29 @@
+/* text-shortening placeholder */
+%text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* CSS perfect centering */
+%css-perfect-center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* circle making css */
+%css-circle {
+  border-radius: 100%;
+}
+
+/* turn on hardware acceleration */
+%accelerated {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+}

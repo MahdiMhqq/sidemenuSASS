@@ -1,0 +1,66 @@
+.toast-box{
+    min-height: calcRem(300px);
+    max-width: calcRem(300px);
+    @include pos(fixed,0,null,0);
+    padding: calcRem(15px);
+    @include flex(flex-end,null,column-reverse);
+    overflow: hidden;
+    z-index: z("toast-box");
+}
+.toast-item{
+    @include flex(space-between,center);
+    background-color: rgba($white, 0.5);
+    backdrop-filter: blur(10px);
+    margin-bottom: calcRem(15px);
+    padding: calcRem(15px);
+    width: 100%;
+    border-radius: 5px;
+    &::before{
+        @include psuedo(block,absolute,'');
+        @include pos(null,0,null,0,0);
+        width: calcRem(5px);
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+    }
+    .toast-icon{
+        margin-left: calcRem(12px);
+    }
+    &-success{
+        &::before{
+            background-color: $success-color;
+        } .toast-icon{
+            color: $success-color;
+            
+        }
+    }
+    &-info{
+        &::before{
+            background-color: $info-color;
+        } .toast-icon{
+            color: $info-color;
+            
+        }
+    }
+    &-danger{
+        &::before{
+            background-color: $danger-color;
+        } .toast-icon{
+            color: $danger-color;
+            
+        }
+    }
+    .toast-close{
+        align-self: flex-start;
+        margin-right: calcRem(5px);
+        color: $gray;
+        cursor: pointer;
+        &:hover{
+            color: $danger-color;
+        }
+    }
+}
+.toast-content .toast-desc{
+    margin-top: calcRem(10px);
+    color: $gray;
+    font-size: calcRem(14px);
+}

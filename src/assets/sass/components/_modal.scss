@@ -1,0 +1,66 @@
+.signin-modal {
+  @extend %accelerated;
+  @include pos(fixed, 50%, 50%);
+  width: 40%;
+  @include screen("md", max) {
+    width: 90%;
+  }
+  height: 50vh;
+  z-index: z("signin-modal");
+  background-color: $signin-background-color;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  @include flex(center, null, column);
+  padding: 30px;
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translate(600%, -50%);
+  &.open {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  input {
+    width: 100%;
+    height: calcRem(40px);
+    font-size: calcRem(16px);
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid map.get(colorMapCreator($btn-menu-active), "100");
+    padding: 0 calcRem(15px);
+    margin-bottom: calcRem(10px);
+  }
+  .signin-btn {
+    background-color: map.get(colorMapCreator($btn-menu-active), "600");
+    color: $white;
+    font-size: calcRem(20px);
+    border: none;
+    margin-top: calcRem(30px);
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: map.get(colorMapCreator($btn-menu-active), "300");
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+  label {
+    position: relative;
+    width: 100%;
+  }
+}
+#show-pass {
+  @include pos(absolute, calcRem(15px), calcRem(12px));
+  cursor: pointer;
+  color: $gray;
+  &:hover {
+    color: map.get(colorMapCreator($main-bg-1), "600");
+  }
+}
+.signin-overlay {
+  @include pos(fixed, 0, 0);
+  z-index: z-sub("signin-modal", -1);
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}

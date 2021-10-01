@@ -1,0 +1,211 @@
+/* START SIDEBAR MENU STYLES */
+.menu-btn {
+  @include pos(fixed, calcRem(16px), calcRem(20px));
+  z-index: z("menu-btn");
+  cursor: pointer;
+  .bar {
+    display: block;
+    width: calcRem(30px);
+    height: calcRem(4px);
+    border-radius: calcRem(3px);
+    background-color: $white;
+    z-index: z-sub("menu-btn", 1);
+    margin: calcRem(7px);
+    transform-origin: left;
+    transition: all 0.4s cubic-bezier(0.73, -0.41, 0.27, 1.55);
+  }
+  &.checked {
+    .bar-top {
+      @include animation(
+        btn-checked-top,
+        0.5s,
+        ease-in-out,
+        2.5s,
+        1,
+        forwards
+      ) {
+        100% {
+          transform: rotate(45deg) scaleX(1.05);
+          background-color: $btn-menu-active;
+        }
+      }
+    }
+    .bar-bottom {
+      @include animation(
+        btn-checked-bottom,
+        0.5s,
+        ease-in-out,
+        2.5s,
+        1,
+        forwards
+      ) {
+        100% {
+          transform: rotate(-45deg) scaleX(1.05);
+          background-color: $btn-menu-active;
+        }
+      }
+    }
+    .bar-middle {
+      @include animation(
+        btn-checked-middle,
+        0.5s,
+        ease-in-out,
+        2.5s,
+        1,
+        forwards
+      ) {
+        100% {
+          transform: translateX(-1000%);
+        }
+      }
+    }
+  }
+  &.unchecked {
+    .bar-top {
+      @include animation(btn-unchecked-top, 0.5s, ease-in-out, 1, forwards) {
+        0% {
+          transform: rotate(45deg) scaleX(1.05);
+          background-color: $btn-menu-active;
+        }
+        100% {
+          transform: rotate(0) scaleX(1);
+          background-color: $white;
+        }
+      }
+    }
+    .bar-bottom {
+      @include animation(btn-unchecked-bottom, 0.5s, ease-in-out, 1, forwards) {
+        0% {
+          transform: rotate(-45deg) scaleX(1.05);
+          background-color: $btn-menu-active;
+        }
+        100% {
+          transform: rotate(0) scaleX(1);
+          background-color: $white;
+        }
+      }
+    }
+    .bar-middle {
+      @include animation(btn-unchecked-middle, 0.5s, ease-in-out, 1, forwards) {
+        0% {
+          transform: translateX(-1000%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  display: block;
+  @include pos(fixed, calc(100% - $menu-thickness), 0);
+  width: 100%;
+  height: 100%;
+  background-color: $menu-start-color;
+  backdrop-filter: blur(5px);
+  z-index: z("menu");
+  &.opened:not(.closed) {
+    @include animation(menu-open, 3s, ease-in-out, 1, forwards) {
+      0% {
+        width: 100%;
+        top: calc(100% - $menu-thickness);
+        left: 0;
+        background-color: $menu-start-color;
+      }
+      33% {
+        width: 100%;
+        top: calc(100% - $menu-thickness);
+        left: calc($menu-thickness - 100%);
+        background-color: $menu-mid-color;
+      }
+      66% {
+        width: 100%;
+        top: 0;
+        left: calc($menu-thickness - 100%);
+      }
+      100% {
+        left: 0;
+        top: 0;
+        width: 40%;
+        background-color: $menu-end-color;
+      }
+    }
+  }
+  &.closed:not(.opened) {
+    @include animation(menu-close, 3s, ease-in-out, 1, forwards) {
+      0% {
+        left: 0;
+        top: 0;
+        width: 40%;
+        background-color: $menu-end-color;
+      }
+      33% {
+        width: 100%;
+        top: 0;
+        left: calc($menu-thickness - 100%);
+      }
+      66% {
+        width: 100%;
+        top: calc(100% - $menu-thickness);
+        left: calc($menu-thickness - 100%);
+        background-color: $menu-mid-color;
+      }
+      100% {
+        width: 100%;
+        top: calc(100% - $menu-thickness);
+        left: 0;
+        background-color: $menu-start-color;
+      }
+    }
+  }
+  ul {
+    padding: 40px;
+    @include screen("xs", min) {
+      padding: 40px 20px;
+      font-size: 1.2rem !important;
+    }
+    @include screen("sm", min) {
+      padding: 40px;
+    }
+    @include screen("md", min) {
+      padding: 40px;
+      font-size: 1.5rem !important;
+    }
+    li {
+      padding: 20px 0;
+      color: $white;
+      overflow-x: hidden;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        @include psuedo(block, absolute, "");
+        @include pos(null, null, 0, null, calcRem(5px));
+        background-color: $white;
+        width: 100%;
+        height: 2px;
+        transform: translateX(-101%);
+        transition: transform 0.3s ease;
+      }
+      &:hover::after {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+.overlay-sidebar {
+  @include pos(fixed, 0, 200%);
+  width: 100vw;
+  height: 100vh;
+  background: {
+    color: rgba(255, 255, 255, 0.3);
+    blend-mode: darken;
+  }
+  backdrop-filter: blur(20px);
+  z-index: z-sub("flat", 1);
+  transition: left 2s ease-in-out;
+  &.open {
+    left: 0;
+  }
+}

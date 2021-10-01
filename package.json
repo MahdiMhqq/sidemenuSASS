@@ -1,0 +1,39 @@
+{
+  "type": "module",
+  "name": "testing-sass-with-gulp",
+  "version": "1.0.0",
+  "description": "Lets see how GULP and SASS work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "GULP",
+    "SASS"
+  ],
+  "author": "Mahdi Mohaqeq",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.3.6",
+    "clean-css": "^5.2.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.3.8",
+    "sass": "^1.42.1",
+    "uglify-js": "^3.14.2"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.1.1"
+  }
+}

@@ -1,0 +1,31 @@
+/* START HERO HEADER WITH 2 FLOATING CIRCKLES */
+.hero-header {
+    background: linear-gradient(117deg, $main-bg-1 1%, $main-bg-2 90%);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .floating-circle1,
+    .floating-circle2 {
+      display: inline-block;
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      border-radius: 100%;
+    }
+    .floating-circle1 {
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 200px 200px $floating-cricle-1-color;
+      background-color: $floating-cricle-1-color;
+    }
+    .floating-circle2 {
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 300px 200px $floating-cricle-2-color;
+      background-color: $floating-cricle-2-color;
+    }
+  }
+  /* END HERO HEADER WITH 2 FLOATING CIRCKLES */
+  /*  */
+  

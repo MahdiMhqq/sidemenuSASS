@@ -1,0 +1,101 @@
+/* FontFace Mixin */
+@mixin font-face(
+  $name,
+  $file-name,
+  $file-path,
+  $font-weight: normal,
+  $font-style: normal
+) {
+  @font-face {
+    font-family: "#{$name}";
+    src: url("#{$file-path}/#{$file-name}.eot");
+    src: url("#{$file-path}/#{$file-name}.eot?#iefix")
+        format("embedded-opentype"),
+      url("#{$file-path}/#{$file-name}.woff") format("woff"),
+      url("#{$file-path}/#{$file-name}.ttf") format("truetype"),
+      url("#{$file-path}/#{$file-name}.svg?#webfont") format("svg");
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+/* Position Mixin */
+@mixin pos(
+  $position: absolute,
+  $top: null,
+  $left: null,
+  $right: null,
+  $bottom: null
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+/* media query mixin */
+@mixin screen($size, $type: min, $pixels: null) {
+  @if $size == "xs" {
+    @media screen and (#{$type}-width: $breakpoint-xs-custom) {
+      @content;
+    }
+  } @else if $size == "sm" {
+    @media screen and (#{$type}-width: $breakpoint-sm-custom) {
+      @content;
+    }
+  } @else if $size == "md" {
+    @media screen and (#{$type}-width: $breakpoint-md-custom) {
+      @content;
+    }
+  } @else if $size == "lg" {
+    @media screen and (#{$type}-width: $breakpoint-lg-custom) {
+      @content;
+    }
+  } @else if $size == "xl" {
+    @media screen and (#{$type}-width: $breakpoint-xl-custom) {
+      @content;
+    }
+  } @else if $size == "xxl" {
+    @media screen and (#{$type}-width: $breakpoint-xxl-custom) {
+      @content;
+    }
+  } @else if $size == "custom" {
+    @media screen and (#{$type}-width: $pixels + px) {
+      @content;
+    }
+  } @else {
+    @error "Property #{$size} must be xs,sm,md,lg,xl,xll or custom";
+  }
+}
+
+/* Psuedo element mixin */
+@mixin psuedo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+/* flex box mixin */
+@mixin flex($pos-x, $pos-y, $dir: null) {
+  display: flex;
+  justify-content: $pos-x;
+  align-items: $pos-y;
+  flex-direction: $dir;
+}
+
+/* animation mixin */
+@mixin animation(
+  $name,
+  $duration,
+  $timing-function,
+  $delay: null,
+  $repeats,
+  $direction: null,
+  $fill-mode: null
+) {
+  animation: $name $duration $timing-function $delay $repeats $direction
+    $fill-mode;
+  @keyframes #{$name} {
+    @content;
+  }
+}

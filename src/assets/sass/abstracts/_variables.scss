@@ -1,0 +1,57 @@
+/* custom style colors */
+$main-bg-1: rgb(69, 104, 220);
+$main-bg-2: rgb(176, 106, 179);
+$white: #fff;
+$gray: #888;
+$black: #000;
+
+$floating-cricle-1-color: #d620de73;
+$floating-cricle-2-color: #8798e4;
+
+$btn-menu-active: #d620de;
+
+$menu-start-color: #60b8ff;
+$menu-mid-color: $btn-menu-active;
+$menu-end-color: #4e4376ee;
+
+$menu-thickness: 1vmax;
+
+$signin-background-color: rgba(69, 104, 220, 0.5);
+
+$corner-menu-background-color: rgba(206, 48, 166, 0.4);
+/* colors Bootsstrap */
+$primary-color: #27a2fc;
+$secondary-color: #a0b7bc;
+$success-color: #37bd74;
+$danger-color: #e8286b;
+$info-color: #7ebcfa;
+$warning-color: #ff9b37;
+$light-color: #eef0f2;
+$dark-color: #3c4055;
+$body-bg-color: #efefef;
+
+/* breakpoints bootstrap */
+$breakpoint-xs-custom: 0;
+$breakpoint-sm-custom: 576px;
+$breakpoint-md-custom: 768px;
+$breakpoint-lg-custom: 992px;
+$breakpoint-xl-custom: 1200px;
+$breakpoint-xxl-custom: 1400px;
+
+/* z-indexes */
+/*
+$z-indexes: (
+    upper-elements-layer,
+    *,
+    *,
+    *,
+    lower-elements-layer,
+*/
+$z-indexes: (
+  "signin-modal",
+  "toast-box",
+  "corner-menu",
+  "menu-btn",
+  "menu",
+  "flat"
+);

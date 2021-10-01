@@ -1,0 +1,43 @@
+@use "sass:math";
+/* Rem calculating for Font size px to rem mixin */
+@function calcRem($size) {
+  $remSize: math.div($size, 16px);
+  @return $remSize * 1rem;
+}
+
+/* Material Design style color map creator */
+@function colorMapCreator($color) {
+  $colors: (
+    "50": lighten($color, 40.5%),
+    "100": lighten($color, 36%),
+    "200": lighten($color, 27%),
+    "300": lighten($color, 18%),
+    "400": lighten($color, 9%),
+    "500": $color,
+    "600": darken($color, 9%),
+    "700": darken($color, 18%),
+    "800": darken($color, 27%),
+    "900": darken($color, 36%),
+  );
+  @return $colors;
+}
+
+/* z-index auto calculation */
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name) + 1) * 1000;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+/* sub z-index */
+@function z-sub($name, $level) {
+  @if z($name) {
+    @return (z($name) + $level);
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}

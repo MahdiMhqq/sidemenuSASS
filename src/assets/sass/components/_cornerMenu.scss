@@ -1,0 +1,72 @@
+.corner-menu {
+  @include pos(fixed, null, null, 2.5rem, 2.5rem);
+  font-size: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: z("corner-menu");
+  .item-wrapper,
+  .corner-back {
+    @include pos(absolute);
+    width: 4.1rem;
+    height: 4.1rem;
+    @extend %css-circle;
+    background-color: $corner-menu-background-color;
+    backdrop-filter: blur(10px);
+    z-index: z-sub("corner-menu", -1);
+    transform: rotate(10deg);
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+  &:not(.active):hover .corner-back {
+    transform: scale(1.5);
+  }
+  &.active {
+    .item-wrapper {
+      transform: rotate(0);
+    }
+    .corner-back {
+      transform: scale(4.5);
+    }
+  }
+}
+.corner-item{
+    @include pos(absolute);
+    @extend %css-circle;
+    width: 4rem;
+    height: 4rem;
+    @include flex(center,center);
+    color: $white !important;
+    z-index: z-sub("corner-menu",1);
+    background-color: rgba(map.get(colorMapCreator($btn-menu-active),"700"),0.5);
+    transition: box-shadow 0.3s, background-color 0.3s, transform 0.3s;
+    &:hover{
+        background-color: map.get(colorMapCreator($btn-menu-active),"600");
+        box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    }
+    &:active{
+        background-color: map.get(colorMapCreator($btn-menu-active),"600");
+        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    }
+}
+#corner-btn{
+    background-color: map.get(colorMapCreator($btn-menu-active),"600");
+    box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    height: 4.1rem;
+    width: 4.1rem;
+    &:active{
+        background-color: map.get(colorMapCreator($btn-menu-active),"500");
+        box-shadow: 0 0 40px 5px rgba(0,0,0,0.3);
+    }
+}
+
+.corner-menu.active .item-wrapper .corner-item:nth-child(1) {
+    transform: translate(2rem, -6rem);
+  }
+  .corner-menu.active .item-wrapper .corner-item:nth-child(2) {
+    transform: translate(-2.5rem, -5.8rem);
+  }
+  .corner-menu.active .item-wrapper .corner-item:nth-child(3) {
+    transform: translate(-5.8rem, -2.6rem);
+  }
+  .corner-menu.active .item-wrapper .corner-item:nth-child(4) {
+    transform: translate(-6rem, 1.9rem);
+  }

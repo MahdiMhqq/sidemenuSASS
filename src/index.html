@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideBar</title>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/35bf447199.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- My CSS File -->
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+  </head>
+  <body>
+    <!-- START hero header with floating circles -->
+    <div class="hero-header">
+      <div class="floating-circle1"></div>
+      <div class="floating-circle2"></div>
+    </div>
+    <!-- END hero header with floating circles -->
+    <!--  -->
+    <!-- START side bar menu -->
+    <div class="menu-btn first">
+      <span class="bar bar-top"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-bottom"></span>
+    </div>
+    <div class="menu first">
+      <ul>
+        <li><a href="#">خانه</a></li>
+        <li class="signin-modal-btn"><a href="#">ورود/ثبت نام</a></li>
+        <li><a href="#">درباره ما</a></li>
+        <li><a href="#">تماس با ما</a></li>
+      </ul>
+    </div>
+    <div class="overlay-sidebar"></div>
+    <!-- END side bar menu -->
+    <!--  -->
+    <!-- START sign in modal box -->
+    <div class="signin-modal">
+      <input type="text" placeholder="ایمیل یا نام کاربری ..." />
+      <label for="">
+        <i id="show-pass" class="fas fa-eye-slash"></i>
+        <input class="pass-input" type="password" placeholder="رمز عبور ..." />
+      </label>
+      <input class="signin-btn" type="submit" value="ورود" />
+    </div>
+    <div class="signin-overlay"></div>
+    <!-- END sign in modal box -->
+    <!--  -->
+    <!-- START corner menu -->
+    <div class="corner-menu">
+      <div class="corner-back"></div>
+      <a id="corner-btn" class="corner-item" href="#">
+        <i class="fas fa-user-plus"></i>
+      </a>
+      <div class="item-wrapper">
+        <a href="#" class="corner-item">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="corner-item">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="#" class="corner-item">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="corner-item">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
+    <!-- END corner menu -->
+    <!--  -->
+    <!-- START toast box -->
+    <div class="toast-box">
+      <div class="toast-item toast-item-success">
+        <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="toast-content">
+          <p class="toast-title">وارد شدید!</p>
+          <p class="toast-desc">شما با موفقیت به حساب کاربری خود وارد شدید.</p>
+        </div>
+        <span class="toast-close"><i class="fas fa-times"></i></span>
+      </div>
+      <div class="toast-item toast-item-info">
+        <div class="toast-icon"><i class="fas fa-info-circle"></i></div>
+        <div class="toast-content">
+          <p class="toast-title">توصیه امنیتی</p>
+          <p class="toast-desc">
+            برای امنیت بیشتر رمز حساب کاربری خود را تغییر دهید.
+          </p>
+        </div>
+        <span class="toast-close"><i class="fas fa-times"></i></span>
+      </div>
+      <div class="toast-item toast-item-danger">
+        <div class="toast-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="toast-content">
+          <p class="toast-title">توجه!</p>
+          <p class="toast-desc">شخص دیگری به حساب کاربری شما وارد شده است!</p>
+        </div>
+        <span class="toast-close"><i class="fas fa-times"></i></span>
+      </div>
+    </div>
+    <!-- END toast box -->
+
+    <!-- jQuery CDN 3.6.0 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5.1.* CDN ; popper and Js both included -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- My .js File -->
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

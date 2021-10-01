@@ -1,0 +1,70 @@
+// 1. import variables/functions/mixins of your own style
+// Mandantory
+@import "../abstracts/variables";
+// Optional, add them if they are neccessary
+@import "../abstracts/functions";
+
+// 2. Include Bootstrap functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../../../node_modules/bootstrap/scss/functions";
+
+// 3. Include any default variable overrides here
+// global colors
+$primary: $primary-color;
+$secondary: $secondary-color;
+$success: $success-color;
+$info: $danger-color;
+$warning: $info-color;
+$danger: $warning-color;
+$light: $light-color;
+$dark: $dark-color;
+
+$body-bg: $main-bg-1;
+// $body-color: $gray-900;
+// $body-text-align: null;
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: $breakpoint-xs-custom,
+  sm: $breakpoint-sm-custom,
+  md: $breakpoint-md-custom,
+  lg: $breakpoint-lg-custom,
+  xl: $breakpoint-xl-custom,
+  xxl: $breakpoint-xxl-custom,
+);
+
+/*  Here we have two options
+    ***** Option #1 :    
+        if we want to use full version of bootstrap, not some 
+        specific components and layouts, we should import the 
+        whole Bootstrap core.
+        #like i did on this project :
+
+            // 4. Include the whole core of Bootstrap
+            @import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+    ***** Option #2 :
+        if we want to use some of Bootstrap and not the whole core,
+        (For example just using its grid system) we should :
+
+        #first : add neccessary files of Bootstrap as step 4:
+
+            // 4. Include remainder of required Bootstrap stylesheets
+            @import "../../../../node_modules/bootstrap/scss/variables";
+            @import "../../../../node_modules/bootstrap/scss/mixins";
+
+        ##second : add optional files we need in our project as step 5:
+
+            // 5. Include any optional Bootstrap components as you like
+            @import "../node_modules/bootstrap/scss/root";
+            @import "../node_modules/bootstrap/scss/reboot";
+            @import "../node_modules/bootstrap/scss/type";
+            @import "../node_modules/bootstrap/scss/images";
+            @import "../node_modules/bootstrap/scss/containers";
+            @import "../node_modules/bootstrap/scss/grid";
+    ***** CAUTION *****
+    Change directory of files for what fits to your project
+    scheme.
+*/
+
+// 4. Include the whole core of Bootstrap
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
