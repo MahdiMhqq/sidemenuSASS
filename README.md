@@ -18,3 +18,6 @@
      of js/jQuery.
   2. jQuery not selector (:not) has some problems that wont work with
      two classes. (.class1:not(.class2))
+     
+Preview: </br>
+https://rawcdn.githack.com/MahdiMhqq/sidemenuSASS/6478c73b7420c4adb3bf4602c4d2f2c97c977b44/dist/index.html
